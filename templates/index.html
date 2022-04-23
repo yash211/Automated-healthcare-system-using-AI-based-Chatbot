@@ -1,0 +1,2421 @@
+<html lang="en">
+<head>
+  <title>HEALTHCARE</title>
+  <meta charset="utf-8">
+ 
+  <meta name="author" content="HEALTHCARE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assets/images/loog-black.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     
+
+
+
+</head>
+<body onload="animateme()">
+  <h1 style="display: none;">HEALTHCARE</h1>
+<center><div class="landscape"><h1></h1></div></center>
+<div id="mySidenav" class="sidenav customnew" style="width: 0;" >
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="nav-link" href="{{ url_for('about') }}">About</a>    
+    <a class="nav-link" href="{{ url_for('service') }}">Services</a>
+    <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+    <a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a>
+    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" > Catalogue
+      </a>
+      <div class="dropdown-menu" >
+       <a class="dropdown-item" href="{{ url_for('catalogue_Diseases') }}">Diseases</a>
+        <a class="dropdown-item" href="{{ url_for('catalogue_DrugInfo') }}">Drug Information</a>
+        <a class="dropdown-item" href="{{ url_for('catalogue_Hospitals') }}">Hospitals</a>
+      </div>
+      <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+      <a class="nav-link" href="http://instagram.com/dreamsjewels" ><i class="fa fa-instagram" aria-hidden="true" style="font-size: 40px;"></i></a>
+      <a class="nav-link" href="http://facebook.com/DreamsJewels11" ><i class="fa fa-facebook-official" aria-hidden="true" style="font-size: 40px;"></i></a>
+  </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top customnew" style="background-color: black;" id="mybar">
+     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0 ">
+  <ul class="navbar-nav ml-auto text-center">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('about') }}" style="padding-right: 40px;">About</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link" href="{{ url_for('service') }}"style="padding-right: 40px;">Services</a>
+</li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('faq') }}"style="padding-right: 40px;">FAQ&nbsp;&nbsp;</a>
+    </li>
+  </ul>
+</div>
+    <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+
+            <a class="navbar-brand mx-auto" href="index.html" style="padding-right: 40px;"><span class="mytext"> HEALTHCARE</span></a>
+        <div class="navbarbutton" id="mynav" style="cursor: pointer;" onclick="openNav()">
+        <i class="fa fa-circle" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-circle" aria-hidden="true"></i>
+        <br>
+        <i class="fa fa-circle" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-circle" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2 ">
+    <ul class="navbar-nav mr-auto text-center">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('subscribe') }}" style="padding-right: 40px;">Subscribe</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="padding-right: 40px;">
+        Catalogue
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{{ url_for('catalogue_Diseases') }}">Diseases</a>
+        <a class="dropdown-item" href="{{ url_for('catalogue_DrugInfo') }}">Drug Information</a>
+        <a class="dropdown-item" href="{{ url_for('catalogue_Hospitals') }}">Hospitals</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('contact') }}" style="padding-right: 40px;">Contact</a>
+    </li>
+    <li class="nav-item logo1" >
+      <a class="nav-link" href="http://instagram.com/h.d0017" ><i class="fa fa-instagram" aria-hidden="true" style="font-size: 40px;"></i></a> </li>
+      <li class="nav-item logo2">
+      <a class="nav-link" href="http://facebook.com/harsh doshi" ><i class="fa fa-facebook-official" aria-hidden="true" style="font-size: 40px;"></i></a></li>
+  </ul>
+  </div>
+
+</nav>
+<div class="mee">
+  <div id="panel">
+  
+      <div class="ball1" id="Bal1"></div>
+      <h1 style="color: white;position: relative;z-index: 10;">Welocme to HEALTHCARE</h1>
+
+      <div class="ball2" id="Bal2"></div>
+      <br>
+      <br>
+      <br>
+                <!--Subscription part-->
+      <div style="z-index:25;position: relative;">
+        <h4>
+          <form id="contactForm">
+        <input type="email" name="email" class="eml" id="email" placeholder="email" data-rule="email" data-msg="Please enter a valid email" >
+        <button type="submit"  class="btn">Subscribe</button>
+        </form>
+        <div class="answer_list" id="ch" style="display:none;"><font color="red" >Please enter a valid email</font></div>
+        <div  class="alert1" id="response" >Subscribed</div>
+        <div  class="alert2" id="response" >Already Subscribed</div>
+        <span><i class="fa fa-heart" aria-hidden="true" id="number"></i></span>
+      </h4>
+      </div>
+      
+        <div id="touchsurface3">
+      <div class="ball3" id="Bal3"></div>
+      <div class="ball4" id="Bal4"></div>
+      <center><i class="fa fa-window-minimize mini" aria-hidden="true" ></i></center>
+  </div>
+  </div>
+  
+  <div id="WAButton"></div>
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="none">
+  <!--Slider area-->
+ 
+    <div class="hii">
+      <div class="toucharea2">
+  <img src="semi.png" style="opacity: 0;" id="itsme">
+</div>
+<div class="toucharea">
+  <img src="semi.png"  id="itsme2">
+</div>
+    </div>
+  <div class="slideit">
+    <div id="button-background">
+<span class="slide-text" style="cursor: pointer;font-family: sans-serif;font-size: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⋙⋙⋙⋙</span>
+  <div id="slider">
+    <i class="fa fa-ambulance" aria-hidden="true" id="heyy" style="font-size: 30px;opacity: 1;"></i>  
+  </div>
+  </div>
+  </div>
+  <BODY></BODY>
+</BODY>
+  <!--Slider area ends-->
+ 
+
+  </div>
+  <div class="leftbox">
+    <ul class="list-groups" style="list-style: none;font-family: Courier New, monospace;text-align: center;padding-right: 20px;">
+      <li><br><a href="{{ url_for('catalogue_Diseases') }}"><font color="white">DISEASES</font><br><br></a></li>
+      <li><a href="{{ url_for('catalogue_Hospitals') }}"><font color="white">HOSPITALS</font><br><br></a></li>
+      <li><a href="{{ url_for('catalogue_DrugInfo') }}"><font color="white">DRUG INFORMATION</font><br><br></a></li>
+      <li><a href="{{ url_for('chatbot') }}"><font color="white">CHATBOT</font></a></li>
+      </ul>
+      <div class="leftupperbox">
+        <div class="blubox" id="box1">
+          <div class="whitebox" id="box2">
+            <br>
+
+        <center><h1 class="maintext" align="top" > AI CHATBOT</h1></center>
+        <hr style="width : 50%;height:5px;background-color:black " id="ll">
+        <span><center><h4 class="basetext" >A virtual doctor</h4></center></span>
+          </div>
+        </div>
+        
+        
+        <div class="leftupperboxnew">
+          <font style="font-family: myFirstFont;text-align: center;">Our Aim</font>
+        </div>
+      </div>
+    </div>
+  <ul class="carousel-indicators" style="display: none">
+    <li  class="item1 active"></li>
+    <li  class="item2"></li>
+    <li  class="item3"></li>
+  </ul>
+
+  <div id="WAButton"></div>
+  <style>
+    #WAButton{
+      
+      bottom: 6%;
+      position : absolute;
+      z-index: 20;
+    }
+  </style>
+  <style>
+    .floating-wpp {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      font-size: 14px;
+      transition: bottom 0.2s;
+    }
+    .floating-wpp .floating-wpp-button {
+      position: relative;
+      border-radius: 50%;
+      box-shadow: 1px 1px 4px rgba(60, 60, 60, 0.4);
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .floating-wpp .floating-wpp-button img,
+    .floating-wpp .floating-wpp-button svg {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+    .floating-wpp:hover {
+      bottom: 17px;
+    }
+    .floating-wpp:hover .floating-wpp-button {
+      box-shadow: 1px 2px 8px rgba(60, 60, 60, 0.4);
+    }
+    .floating-wpp .floating-wpp-popup {
+      border-radius: 6px;
+      background-color: #e5ddd5;
+      position: absolute;
+      overflow: hidden;
+      padding: 0;
+      box-shadow: 1px 2px 8px rgba(60, 60, 60, 0.25);
+      width: 0;
+      height: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: bottom 0.1s ease-out, opacity 0.2s ease-out;
+      transform-origin: bottom;
+    }
+    .floating-wpp .floating-wpp-popup.active {
+      padding: 0 12px 12px;
+      width: 260px;
+      height: auto;
+      bottom: 82px;
+      opacity: 1;
+    }
+    .floating-wpp .floating-wpp-popup .floating-wpp-message {
+      background-color: #fff;
+      padding: 8px;
+      border-radius: 0 5px 5px;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .floating-wpp .floating-wpp-popup.active .floating-wpp-message {
+      opacity: 1;
+      transition-delay: 0.2s;
+    }
+    .floating-wpp .floating-wpp-popup .floating-wpp-head {
+      text-align: right;
+      color: #fff;
+      margin: 0 -15px 10px;
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .floating-wpp .floating-wpp-input-message {
+      background-color: #fff;
+      margin: 10px -15px -15px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+    }
+    .floating-wpp .floating-wpp-input-message textarea {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: none;
+      padding: 8px;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 100%;
+      font-family: inherit;
+      font-size: inherit;
+      resize: none;
+    }
+    .floating-wpp .floating-wpp-btn-send {
+      margin-left: 12px;
+      font-size: 0;
+      cursor: pointer;
+    }
+    
+  </style>
+  
+  <style>
+   { margin: 30;padding: 30;box-sizing: border-box;} 
+   .carousel-inner img{
+    width: 1000%;
+    height: 1000%;
+
+   }
+  </style>
+  <div class="carousel-inner">
+    <div class="carousel-item active" id="h01">
+      <picture>
+        <source srcset="carousel/ip.png" media="(min-width: 10px) and (max-width : 3px)" style="background-size:80px ;">
+      <source srcset="carousel/bl.png" media="(max-width: 4px)" style="background-size:80px;">
+        <source srcset="carousel/neww.png" media="(min-width: 375px) and (max-width: 10px)" style="background-size:80px ;">
+      <img src="static/bba.jpg">
+    </picture>
+    </div>
+   
+    
+    
+  <script>
+    function animateme(){
+      document.addEventListener('contextmenu',  
+                        event => event.preventDefault());
+    document.getElementById("itsme").classList.add('animatem');
+    document.getElementById("heyy").classList.add('myanim');
+  }
+    $(document).ready(function(){
+
+  $("#myCarousel").carousel();
+    
+  // Enable Carousel Indicators
+  $(".item1").click(function(){
+    $("#myCarousel").carousel(0);
+  });
+  $(".item2").click(function(){
+    $("#myCarousel").carousel(1);
+  });
+  $(".item3").click(function(){
+    $("#myCarousel").carousel(2);
+  });
+    
+  // Enable Carousel Controls
+
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mynav").style.display = "none";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  setTimeout(function(){document.getElementById("mynav").style.display = "block";}, 650);
+}
+</script>
+<script type="text/javascript">
+  var initialMouse = 0;
+var slideMovementTotal = 0;
+var mouseIsDown = false;
+var bool = false;
+var slider = $('#slider');
+slider.on('mousedown touchstart', function(event){
+  document.body.style.overflow = "hidden";
+  mouseIsDown = true;
+  slideMovementTotal = $('#button-background').height() - $(this).height() + 10;
+  initialMouse = event.clientY || event.originalEvent.touches[0].pageY;
+});
+
+$(document.body, '#slider').on('mouseup touchend', function (event) {
+  if (!mouseIsDown)
+    return;
+  mouseIsDown = false;
+  var currentMouse = event.clientY || event.changedTouches[0].pageY;
+  var relativeMouse = currentMouse - initialMouse;
+
+  if (relativeMouse < slideMovementTotal) {
+    $('.slide-text').fadeTo(300, 1);
+    slider.animate({
+      left: "-10px"
+    }, 300);
+    return;
+  }
+  slider.addClass('unlocked');
+document.body.style.overflow = "auto";
+
+  
+  $("#panel").slideDown("slow");
+  document.getElementById("Bal1").classList.add('example1');
+   document.getElementById("Bal2").classList.add('example2');
+   document.getElementById("Bal3").classList.add('example3');
+   document.getElementById("Bal4").classList.add('example4');
+      mouseIsDown = true;
+    $('#button-background').css({'display' : 'none'});
+    slider.css({'display': 'none'});
+     $('.toucharea').css({'display' : 'none'});
+     $('.toucharea2').css({'display' : 'none'});
+    document.getElementById('slider').style.top = "";
+    document.getElementById('slider').style.bottom = "";
+
+
+  });
+
+$(document.body).on('mousemove touchmove', function(event){
+  document.body.style.overflow = "auto";
+  if (!mouseIsDown)
+    return;
+
+  var currentMouse = event.clientY || event.originalEvent.touches[0].pageY;
+  var relativeMouse = currentMouse - initialMouse;
+  var slidePercent = 1 - (relativeMouse / slideMovementTotal);
+  
+  $('.slide-text').fadeTo(0, slidePercent);
+
+  if (relativeMouse <= 0) {
+    slider.css({'left': '-10px'});
+    return;
+  }
+  if (relativeMouse >= slideMovementTotal + 10) {
+    slider.css({'left': slideMovementTotal + 'px'});
+    return;
+  }
+  slider.css({'left': relativeMouse - 10});
+
+});
+function ontouch(el, callback){
+ 
+    var touchsurface = el,
+    dir,
+    swipeType,
+    startX,
+    startY,
+    distX,
+    distY,
+    mouseisdown = false,
+    threshold = 150, //required min distance traveled to be considered swipe
+    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 500, // maximum time allowed to travel that distance
+    elapsedTime,
+    startTime,
+    handletouch = callback || function(evt, dir, phase, swipetype, distance){}
+ 
+    touchsurface.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0]
+        dir = 'none'
+        swipeType = 'none'
+        dist = 0
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
+        handletouch(e, 'none', 'start', swipeType, 0) // fire callback function with params dir="none", phase="start", swipetype="none" etc
+        e.preventDefault()
+ 
+    }, false)
+ 
+    touchsurface.addEventListener('touchmove', function(e){
+        var touchobj = e.changedTouches[0]
+        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+        if (Math.abs(distX) > Math.abs(distY)){ // if distance traveled horizontally is greater than vertically, consider this a horizontal movement
+            dir = (distX < 0)? 'left' : 'right'
+            handletouch(e, dir, 'move', swipeType, distX) // fire callback function with params dir="left|right", phase="move", swipetype="none" etc
+        }
+        else{ // else consider this a vertical movement
+            dir = (distY < 0)? 'up' : 'down'
+            handletouch(e, dir, 'move', swipeType, distY) // fire callback function with params dir="up|down", phase="move", swipetype="none" etc
+        }
+        e.preventDefault() // prevent scrolling when inside DIV
+    }, false)
+ 
+    touchsurface.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0]
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        if (elapsedTime <= allowedTime){ // first condition for awipe met
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                swipeType = dir // set swipeType to either "left" or "right"
+            }
+            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                swipeType = dir // set swipeType to either "top" or "down"
+            }
+        }
+        // Fire callback function with params dir="left|right|up|down", phase="end", swipetype=dir etc:
+        handletouch(e, dir, 'end', swipeType, (dir =='left' || dir =='right')? distX : distY)
+        e.preventDefault()
+    }, false)
+  touchsurface.addEventListener('mousedown', function(e){
+    var touchobj = e
+    dir = 'none'
+    swipeType = 'none'
+    dist = 0
+    startX = touchobj.pageX
+    startY = touchobj.pageY
+    startTime = new Date().getTime() // record time when finger first makes contact with surface
+    handletouch(e, 'none', 'start', swipeType, 0) // fire callback function with params dir="none", phase="start", swipetype="none" etc
+    mouseisdown = true
+    e.preventDefault()
+  
+  }, false)
+
+  document.body.addEventListener('mousemove', function(e){
+    if (mouseisdown){
+      var touchobj = e
+      distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+      distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+      if (Math.abs(distX) > Math.abs(distY)){ // if distance traveled horizontally is greater than vertically, consider this a horizontal movement
+        dir = (distX < 0)? 'left' : 'right'
+        handletouch(e, dir, 'move', swipeType, distX) // fire callback function with params dir="left|right", phase="move", swipetype="none" etc
+      }
+      else{ // else consider this a vertical movement
+        dir = (distY < 0)? 'up' : 'down'
+        handletouch(e, dir, 'move', swipeType, distY) // fire callback function with params dir="up|down", phase="move", swipetype="none" etc
+      }
+      e.preventDefault() // prevent scrolling when inside DIV
+    }
+  }, false)
+
+  document.body.addEventListener('mouseup', function(e){
+    if (mouseisdown){
+      var touchobj = e
+      elapsedTime = new Date().getTime() - startTime // get time elapsed
+      if (elapsedTime <= allowedTime){ // first condition for awipe met
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+          swipeType = dir // set swipeType to either "left" or "right"
+        }
+        else if (Math.abs(distY) >= threshold  && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+          swipeType = dir // set swipeType to either "top" or "down"
+        }
+      }
+      // fire callback function with params dir="left|right|up|down", phase="end", swipetype=dir etc:
+      handletouch(e, dir, 'end', swipeType, (dir =='left' || dir =='right')? distX : distY)
+      mouseisdown = false
+      e.preventDefault()
+    }
+  }, false)
+}
+
+  window.addEventListener('load', function(){
+     var el = document.getElementById('touchsurface3')
+     ontouch(el, function(evt, dir, phase, swipetype, distance){
+         var touchreport = ''
+         var x;
+         touchreport += 'Dir:' +dir;
+         x = distance;
+         //touchreport += 'Dist:' +x;
+         var y = -40;
+         if(touchreport == 'Dir:up' && x <=y ){
+    $("#panel").slideUp("slow");
+$('#button-background').css({'display' : 'block'});
+    slider.css({'display': 'block'});
+    $('.toucharea').css({'display' : 'block'});
+    $('.toucharea2').css({'display' : 'block'});
+}
+     });
+}, false)
+</script>
+<style>
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 17%;
+  bottom: 10px;
+  z-index: 10;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 60px;
+  left: 15.5%;
+  z-index: 10;
+}
+.hii .animatem{
+    animation: myani 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes myani {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+  .sidenav {
+  height: 100%;
+  width: 50px;
+  position: fixed;
+  top: 15px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 20;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 200px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#button-background {
+  position: absolute;
+  background-color: transparent;
+  width: 80px;
+  height: 300px;
+  border: white;
+  border-radius: 40px;
+  text-align: center;
+   -webkit-transform:rotate(90deg);
+   bottom: 70px;
+   align-content: center;
+}
+
+#slider {
+
+  position: absolute;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: 40px;
+top: -18px;
+color: white;
+-webkit-transform:rotate(-90deg);
+font-size: 50px;
+}
+.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  z-index: 10;
+}
+  .leftbox{
+    position: absolute;
+    bottom: 60px;
+    margin-left: 43%;
+    width: 200px;
+    background-color: rgba(0,0,0,0.6);
+    height: auto;
+    z-index: 10;
+    color: white;
+    padding-top: 20px;
+    padding-right: 5px;
+  }
+  .bottombox{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    background-color: #041839;
+  }
+    .leftupperbox{
+    position: absolute;
+    left: -60%;
+    width: 450px;
+    height: 150px;
+    top: -180px;
+    background-color: white;
+
+  }
+  .leftupperboxnew{
+    position: absolute;
+    left: 25%;
+    top: -105px;
+    width: auto;
+    height: auto;
+    font-size: 65px;
+  }
+  .lowersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(-90deg);
+}
+.lowersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+  .lowersidebox{
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    align-content: center;
+    background-color: #041839;
+    z-index: 10;
+    border: 0;
+  }
+  .lowersidebox:hover{
+    opacity: 80%;
+  }
+    .uppersidebox{
+    width: 50px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #041839;
+    position: absolute;
+    border: 0;
+  }
+  .uppersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(90deg);
+}
+.uppersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+
+  .uppersidebox:hover{
+    opacity: 80%;
+  }
+.mini{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+}
+#itsme{
+  height: 70px;
+}
+#itsme2{
+  height: 50px
+}
+.alert1{
+  text-align: center;
+  color: white;
+  display: none;
+}
+.alert2{
+  text-align: center;
+  color: white;
+  display: none;
+}
+
+.landscape{
+  display: none;
+}
+#touchsurface3{
+width: 100%;
+height: auto;
+}
+.hii .animatem{
+    animation: myani 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes myani {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.ball1{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example1;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example1{
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:100px; top:144px}
+  50%  {background-color:blue; left:224px; top:78px;}
+  75%  {background-color:green; left:0px; top:150px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+.ball2{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example2{
+  0%   {background-color:red; left:900px; top:220px;}
+  25%  {background-color:yellow; left:789px; top:174px}
+  50%  {background-color:blue; left:677px; top:78px;}
+  75%  {background-color:green; left:900px; top:200px;}
+  100% {background-color:red; left:900px; top:220px;}
+}
+.ball3{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example3;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example3{
+  0%   {background-color:red; left:400px; top:-80px;}
+  25%  {background-color:yellow; left:789px; top:100px}
+  50%  {background-color:blue; left:400px; top:78px;}
+  75%  {background-color:green; left:350px; top:-150px;}
+  100% {background-color:red; left:400px; top:-80px;}
+}
+.ball4{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example4;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example4{
+  0%   {background-color:red; left:1300px; top:-100px;}
+  25%  {background-color:yellow; left:1020px; top:-50px}
+  50%  {background-color:blue; left:1200px; top:-90px;}
+  75%  {background-color:green; left:1300px; top:-160px;}
+  100% {background-color:red; left:1300px; top:-100px;}
+}
+.eml{
+  background-color: white;
+
+  border-radius: 20px;
+  border: solid 1px grey;
+}
+.btn{
+  color: white;
+}
+
+
+#heyy .myanim{
+    animation: sli 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes sli{
+    from{opacity: 1;}
+    to{opacity: 0;}
+  }
+#panel {
+  padding: 50px;
+  display: none;
+    padding: 5px;
+  text-align: center;
+  background-color: black;
+  border: solid 1px white;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  z-index: 20;
+  color:white ;
+  border-radius: 50px;
+  padding-bottom: 30px;
+}
+
+.material-icons {
+  font-size: 50px;
+}
+
+.slide-text {
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  font-size: 14px;
+  color: white;
+  a {
+    color: white;
+  }
+
+}
+.logo1{
+  position: absolute;
+  right: 10px;
+}
+.logo2{
+position: absolute;
+right: 60px;
+}
+  .navbarbutton{
+    display: none;
+  }
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+                height: 100%;
+                width: 100%;
+        }
+        
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .carousel-control {
+        z-index: 2;
+    }
+}
+
+.carousel, 
+.carousel-inner, 
+.carousel-inner .item {
+
+}
+#number{
+  color: white;
+  font-size: 25px;
+  text-align: center;
+
+}
+
+.item:nth-child(1) {
+    background: #74C390;
+}
+
+.item:nth-child(2) {
+    background: #51BCE8;
+}
+
+.item:nth-child(3) {
+    background: #E46653;
+}
+  .mee{
+    height: 100%;
+    width: 100%;
+  }
+    .lowerbox{
+    left: 0;
+    bottom:0;
+    right:0;
+    background-color: white;
+    height:auto; 
+    padding: 20px;
+    }
+  .maintext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839;
+    position: relative;
+  }
+  .basetext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839
+  }
+  .carousel-inner img {
+    width: auto;
+    height: auto;
+    position: relative;
+
+    margin-right: 0px;
+    margin-left: 0px;
+
+
+  }
+  .custom a{
+    padding-right: 40px;
+  }
+
+
+  #carousel-control-prev{
+    position: absolute;
+    right: 0;
+  }
+
+
+  .blubox{
+    width: 450px;
+    height: 0px;
+    top: -180px;
+    background-color: #5C6A59;
+  }
+  .whitebox{
+    width: 450px;
+    height: 0px;
+    top: -180px;
+    background-color: white;
+  }
+  .blubox.vertranslate{
+    -webkit-transition: 1s infinite;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 0;
+  height: 200px;
+  }
+.whitebox.sectranslate{
+    -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 1s;
+  height: 200px;
+  }
+
+  .bluebox.uptranslate{
+    -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 1250;
+  height: 0px;
+  }
+
+  .customnew.animated{
+    animation: mymove 3s;
+  }
+  @keyframes mymove {
+  from {background-color: #041839;}
+  to {background-color: #5C6A59;}
+}
+ .customnew.animated2{
+    animation: mymove2 3s;
+  }
+  @keyframes mymove2 {
+  from {background-color: #5C6A59;}
+  to {background-color: #919A0C;}
+}
+.customnew.animated3{
+    animation: mymove3 3s;
+  }
+  @keyframes mymove3 {
+  from {background-color: #919A0C;}
+  to {background-color: #041839;}
+}
+.customnew.animated4{
+    animation: mymove4 3s;
+  }
+  @keyframes mymove4 {
+  from {background-color: #041839;}
+  to {background-color: #919A0C;}
+}
+.customnew.animated5{
+  animation: mymove5 3s;
+}
+  @keyframes mymove5 {
+  from {background-color: #5C6A59;}
+  to {background-color: #041839;}
+}
+.customnew.animated6{
+  animation: mymove6 3s;
+}
+  @keyframes mymove6 {
+  from {background-color: #919A0C;}
+  to {background-color: #5C6A59;}
+}
+
+
+@media only screen and (min-width: 400px) and (max-width: 600px){
+    .ball2{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+  .navbarbutton{
+    display: block;
+    top: 10px;
+    left: -70px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    color: white;
+    z-index: 10;
+    font-size: 10px;
+  }
+    .logo1{
+  position: relative;
+}
+.logo2{
+position: relative;
+right: 8px;
+}
+    .ball3{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+    .ball4{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+#panel {
+  padding: 50px;
+  display: none;
+    padding: 5px;
+  text-align: center;
+  background-color: black;
+  border: solid 1px white;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  z-index: 20;
+  color:white ;
+  border-radius: 50px;
+}
+/*.toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 59%;
+  bottom: 0;
+  z-index: 10;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 54%;
+  bottom: 0;
+  z-index: 10;
+}*/
+#itsme{
+  height: 50px;
+}
+#itsme2{
+  height: 30px
+}
+#touchsurface3{
+width: 100%;
+height: 40px;
+}
+/*.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 40%;
+  bottom: 10%;
+  z-index: 10;
+}
+#button-background {
+  position: absolute;
+  background-color: transparent;
+  width: 80px;
+  height: 200px;
+  border: white;
+  border-radius: 40px;
+  text-align: center;
+   -webkit-transform:rotate(90deg);
+   bottom: 40px;
+   align-content: center;
+}
+#slider {
+
+  position: absolute;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: 40px;
+top: -18px;
+color: white;
+-webkit-transform:rotate(-90deg);
+size: 20px;
+}*/
+.slide-text {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+   /* .leftupperbox{
+    position: absolute;
+    left: 0;
+    width: 300px;
+    height: 150px;
+    top: -150px;
+    background-color: white;
+  }*/
+  .toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 20%;
+  bottom: 45px;
+  z-index: 15;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 45px;
+  left: 15.5%;
+  z-index: 15;
+}
+.hii .animatem{
+    animation: myani 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes myani {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+#button-background {
+  position: absolute;
+  background-color: transparent;
+  width: 80px;
+  height: 300px;
+  border: white;
+  border-radius: 40px;
+  text-align: center;
+   -webkit-transform:rotate(90deg);
+   bottom: 70px;
+   align-content: center;
+}
+
+#slider {
+
+  position: absolute;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: 40px;
+top: -18px;
+color: white;
+-webkit-transform:rotate(-90deg);
+font-size: 50px;
+}
+.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: -10%;
+  bottom: 8%;
+  z-index: 15;
+}
+  .leftbox{
+    position: absolute;
+    bottom: 45px;
+    margin-left: 35%;
+    width: 160px;
+    background-color: rgba(0,0,0,0.6);
+    height: auto;
+    z-index: 10;
+    color: white;
+    padding-top: 20px;
+    padding-right: 5px;
+
+  }
+  .bottombox{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    background-color: #041839;
+  }
+    .leftupperbox{
+    position: absolute;
+    left: -45%;
+    width: 280px;
+    height: 150px;
+    top: -110px;
+    background-color: white;
+
+  }
+  .leftupperboxnew{
+    position: absolute;
+    left: 15%;
+    top: -80px;
+    width: auto;
+    height: auto;
+    font-size: 50px;
+  }
+  .lowersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(-90deg);
+}
+.lowersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+  .lowersidebox{
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    align-content: center;
+    background-color: #041839;
+    z-index: 10;
+    border: 0;
+  }
+  .lowersidebox:hover{
+    opacity: 80%;
+  }
+    .uppersidebox{
+    width: 50px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #041839;
+    position: absolute;
+    border: 0;
+  }
+  .uppersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(90deg);
+}
+.uppersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+
+  .uppersidebox:hover{
+    opacity: 80%;
+  }
+   .blubox{
+    width: 280px;
+    height: 0px;
+    top: -110px;
+    background-color: #5C6A59;
+  }
+  .whitebox{
+    width: 280px;
+    height: 0px;
+    top: -110px;
+    background-color: white;
+  }
+  .blubox.vertranslate{
+    -webkit-transition: 1s infinite;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 0;
+  height: 150px;
+  }
+.whitebox.sectranslate{
+    -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 1s;
+  height: 150px;
+  }
+    /*.leftupperboxnew{
+    position: absolute;
+    left: 10px;
+    top: -70px;
+    width: auto;
+    height: auto;
+    font-size: 55px;
+  }*/
+  .maintext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839;
+    position: relative;
+    font-size: 30px;
+  }
+  .basetext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839;
+    font-size: 18px;
+  }
+  html, body {
+height:100%;
+width:100%;
+margin:0;
+padding:0;
+ }
+   .carousel,.item,.active{
+      height:100%;
+   
+    }
+  .carousel-inner{
+      height:100%;
+   
+  }
+}    
+@media only screen and (max-width: 350px){
+    .ball2{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+  .navbarbutton{
+    display: block;
+    top: 10px;
+    left: -70px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    color: white;
+    z-index: 10;
+    font-size: 10px;
+  }
+  .carousel,.item,.active{
+      height:100%;
+   
+    }
+    .logo1{
+  position: relative;
+}
+.logo2{
+position: relative;
+right: 8px;
+}
+  .carousel-inner{
+      height:100%;
+   
+  }
+
+    .ball3{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+    .ball4{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+#panel {
+  padding: 50px;
+  display: none;
+    padding: 5px;
+  text-align: center;
+  background-color: black;
+  border: solid 1px white;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  z-index: 20;
+  color:white ;
+  border-radius: 50px;
+}
+/*.toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 61%;
+  bottom: 0;
+  z-index: 10;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 56%;
+  bottom: 0;
+  z-index: 10;
+}*/
+ .toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 20%;
+  bottom: 40px;
+  z-index: 15;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 40px;
+  left: 15.5%;
+  z-index: 15;
+}
+.hii .animatem{
+    animation: myani 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes myani {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+#button-background {
+  position: absolute;
+  background-color: transparent;
+  width: 80px;
+  height: 300px;
+  border: white;
+  border-radius: 40px;
+  text-align: center;
+   -webkit-transform:rotate(90deg);
+   bottom: 70px;
+   align-content: center;
+}
+
+#slider {
+
+  position: absolute;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: 40px;
+top: -18px;
+color: white;
+-webkit-transform:rotate(-90deg);
+font-size: 50px;
+}
+.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: -20%;
+  bottom: 10%;
+  z-index: 15;
+}
+  .leftbox{
+    position: absolute;
+    bottom: 40px;
+    margin-left: 25%;
+    width: 165px;
+    background-color: rgba(0,0,0,0.6);
+    height: auto;
+    z-index: 10;
+    color: white;
+    padding-top: 20px;
+    padding-right: 5px;
+
+  }
+
+  .bottombox{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    background-color: #041839;
+  }
+    .leftupperbox{
+    position: absolute;
+    left: -20.5%;
+    width: 230px;
+    height: 125px;
+    top: -90px;
+    background-color: white;
+
+  }
+  .leftupperboxnew{
+    position: absolute;
+    left: 18%;
+    top: -48px;
+    width: auto;
+    height: auto;
+    font-size: 35px;
+  }
+  .lowersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(-90deg);
+}
+.lowersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+  .lowersidebox{
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    align-content: center;
+    background-color: #041839;
+    z-index: 10;
+    border: 0;
+  }
+  .lowersidebox:hover{
+    opacity: 80%;
+  }
+    .uppersidebox{
+    width: 40px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #041839;
+    position: absolute;
+    border: 0;
+  }
+
+  .uppersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(90deg);
+}
+.uppersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+
+
+  .uppersidebox:hover{
+    opacity: 80%;
+  }
+#itsme{
+  height: 50px;
+}
+#itsme2{
+  height: 30px
+}
+#touchsurface3{
+width: 100%;
+height: 40px;
+}
+/*.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 40%;
+  bottom: 10%;
+  z-index: 10;
+}
+#button-background {
+  position: absolute;
+  background-color: transparent;
+  width: 80px;
+  height: 200px;
+  border: white;
+  border-radius: 40px;
+  text-align: center;
+   -webkit-transform:rotate(90deg);
+   bottom: 40px;
+   align-content: center;
+}
+#slider {
+
+  position: absolute;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: 40px;
+top: -18px;
+color: white;
+-webkit-transform:rotate(-90deg);
+size: 20px;
+}*/
+.slide-text {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+
+}
+/*
+  .leftupperbox{
+    position: absolute;
+    left: 0;
+    width: 250px;
+    height: 130px;
+    top: -90px;
+    background-color: white;
+  }*/
+  html, body {
+height:100%;
+width:100%;
+margin:0;
+padding:0;
+ }
+    .mytext{
+    font-size: 11px;
+  }
+   .blubox{
+    width: 230px;
+    height: 0px;
+    top: -90px;
+    background-color: #5C6A59;
+  }
+  .whitebox{
+    width: 230px;
+    height: 0px;
+    top: -90px;
+    background-color: white;
+  }
+  .blubox.vertranslate{
+    -webkit-transition: 1s infinite;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 0;
+  height: 125px;
+  }
+.whitebox.sectranslate{
+    -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 1s;
+  height: 125px;
+  }
+      /*.leftbox{
+    position: absolute;
+    bottom: 0;
+    margin-left: 0;
+    width: 180px;
+    background-color: rgba(0,0,0,0.6);
+    height: auto;
+    z-index: 10;
+    color: white;
+    padding-top: 20px;
+    padding-right: 5px;
+  }
+    .leftupperboxnew{
+    position: absolute;
+    left: 10px;
+    top: -68px;
+    width: auto;
+    height: auto;
+    font-size: 50px;
+  }*/
+  .maintext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839;
+    position: relative;
+    font-size: 25px;
+  }
+  .basetext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839;
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 350px) and (max-width: 400px){
+    .ball2{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+  .navbarbutton{
+    display: block;
+    top: 10px;
+    left: -70px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    color: white;
+    z-index: 10;
+    font-size: 10px;
+  }
+  .carousel,.item,.active{
+      height:100%;
+   
+    }
+    .logo1{
+  position: relative;
+}
+.logo2{
+position: relative;
+right: 8px;
+}
+  .carousel-inner{
+      height:100%;
+   
+  }
+
+    .ball3{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+    .ball4{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+#panel {
+  padding: 50px;
+  display: none;
+    padding: 5px;
+  text-align: center;
+  background-color: black;
+  border: solid 1px white;
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  z-index: 20;
+  color:white ;
+  border-radius: 50px;
+}
+/*.toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 61%;
+  bottom: 0;
+  z-index: 10;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 56%;
+  bottom: 0;
+  z-index: 10;
+}*/
+ .toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 20%;
+  bottom: 40px;
+  z-index: 15;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 40px;
+  left: 15.5%;
+  z-index: 15;
+}
+.hii .animatem{
+    animation: myani 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes myani {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+#button-background {
+  position: absolute;
+  background-color: transparent;
+  width: 80px;
+  height: 300px;
+  border: white;
+  border-radius: 40px;
+  text-align: center;
+   -webkit-transform:rotate(90deg);
+   bottom: 70px;
+   align-content: center;
+}
+
+#slider {
+
+  position: absolute;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: 40px;
+top: -18px;
+color: white;
+-webkit-transform:rotate(-90deg);
+font-size: 50px;
+}
+.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: -14%;
+  bottom: 8%;
+  z-index: 15;
+}
+  .leftbox{
+    position: absolute;
+    bottom: 36px;
+    margin-left: 30%;
+    width: 160px;
+    background-color: rgba(0,0,0,0.6);
+    height: auto;
+    z-index: 10;
+    color: white;
+    padding-top: 20px;
+    padding-right: 5px;
+
+  }
+
+  .bottombox{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    z-index: 15;
+    bottom: 0;
+    background-color: #041839;
+  }
+    .leftupperbox{
+    position: absolute;
+    left: -35%;
+    width: 250px;
+    height: 130px;
+    top: -90px;
+    background-color: white;
+
+  }
+  .leftupperboxnew{
+    position: absolute;
+    left: 18%;
+    top: -68px;
+    width: auto;
+    height: auto;
+    font-size: 45px;
+  }
+  .lowersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(-90deg);
+}
+.lowersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+  .lowersidebox{
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    align-content: center;
+    background-color: #041839;
+    z-index: 10;
+    border: 0;
+  }
+  .lowersidebox:hover{
+    opacity: 80%;
+  }
+    .uppersidebox{
+    width: 40px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #041839;
+    position: absolute;
+    border: 0;
+  }
+
+  .uppersidebox h4 span {
+    width:150px;
+    display:inline-block;
+    position:absolute;
+    left:-50px;
+    top: 50%;
+    -webkit-transform:rotate(90deg);
+}
+.uppersidebox .content {
+    float:left;
+    width:250px;
+    height:100%;
+    padding:20px;
+
+}
+
+
+  .uppersidebox:hover{
+    opacity: 80%;
+  }
+#itsme{
+  height: 50px;
+}
+#itsme2{
+  height: 30px
+}
+#touchsurface3{
+width: 100%;
+height: 40px;
+}
+/*.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 40%;
+  bottom: 10%;
+  z-index: 10;
+}
+#button-background {
+  position: absolute;
+  background-color: transparent;
+  width: 80px;
+  height: 200px;
+  border: white;
+  border-radius: 40px;
+  text-align: center;
+   -webkit-transform:rotate(90deg);
+   bottom: 40px;
+   align-content: center;
+}
+#slider {
+
+  position: absolute;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: 40px;
+top: -18px;
+color: white;
+-webkit-transform:rotate(-90deg);
+size: 20px;
+}*/
+.slide-text {
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+
+}
+/*
+  .leftupperbox{
+    position: absolute;
+    left: 0;
+    width: 250px;
+    height: 130px;
+    top: -90px;
+    background-color: white;
+  }*/
+  html, body {
+height:100%;
+width:100%;
+margin:0;
+padding:0;
+ }
+    .mytext{
+    font-size: 11px;
+  }
+   .blubox{
+    width: 250px;
+    height: 0px;
+    top: -90px;
+    background-color: #5C6A59;
+  }
+  .whitebox{
+    width: 250px;
+    height: 0px;
+    top: -90px;
+    background-color: white;
+  }
+  .blubox.vertranslate{
+    -webkit-transition: 1s infinite;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 0;
+  height: 130px;
+  }
+.whitebox.sectranslate{
+    -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transition-delay: 1s;
+  height: 130px;
+  }
+      /*.leftbox{
+    position: absolute;
+    bottom: 0;
+    margin-left: 0;
+    width: 180px;
+    background-color: rgba(0,0,0,0.6);
+    height: auto;
+    z-index: 10;
+    color: white;
+    padding-top: 20px;
+    padding-right: 5px;
+  }
+    .leftupperboxnew{
+    position: absolute;
+    left: 10px;
+    top: -68px;
+    width: auto;
+    height: auto;
+    font-size: 50px;
+  }*/
+  .maintext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839;
+    position: relative;
+    font-size: 25px;
+  }
+  .basetext{
+    font-family:serif; 
+    font-variant: small-caps;
+    color:#041839;
+    font-size: 18px;
+  }
+}
+@font-face {
+  font-family: myFirstFont;
+  src: url(cabin-sketch-v1.02/SCRIPTIN.ttf);
+}
+@font-face {
+  font-family: mySecondFont;
+  src: url(cabin-sketch-v1.02/zincboom.ttf);
+}
+@media only screen and (max-width: 1000px) and (orientation : landscape){
+  .mee{
+    display: none;
+  }
+  .navbar{
+    display: none;
+  }
+  .landscape{
+    display: block;
+    margin-top: 60px;
+  }
+} 
+@media (max-width: 750px) and (min-width: 601px){
+.toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 53.3%;
+  bottom: 0;
+  z-index: 10;
+}
+  .navbarbutton{
+    display: block;
+    top: 10px;
+    left: -70px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    color: white;
+    z-index: 10;
+    font-size: 10px;
+  }
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 51.3%;
+  bottom: 0;
+  z-index: 10;
+}
+   .ball2{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+   .ball3{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+    .ball4{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+  }
+  @media (max-width: 900px) and (min-width: 750px){
+.toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 23%;
+  bottom: 60;
+  z-index: 10;
+}
+.slideit{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 10%;
+  bottom: 6%;
+  z-index: 10;
+}
+html,body{
+	height: 100%;
+	width: 100%;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 20.5%;
+  bottom: 60;
+  z-index: 10;
+}
+  .navbarbutton{
+    display: block;
+    top: 10px;
+    left: -70px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    color: white;
+    z-index: 10;
+    font-size: 10px;
+  }
+}
+@media (max-width: 1500px) and (min-width: 900px){
+      .logo1{
+ display: none;
+
+}
+.logo2{
+display: none;
+
+}
+
+.toucharea{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 21%;
+  bottom: 60;
+  z-index: 10;
+}
+.toucharea2{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 19%;
+  bottom: 60;
+  z-index: 10;
+}
+   .ball2{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+   .ball3{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+    .ball4{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  display: none;
+}
+  }
+</style>
+<footer>
+  <div class="lowerbox">
+  <div class="footer-area-bottom">
+  <div class="container">
+    <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                Copyright &copy; 2021 <strong>HEALTH CARE</strong><br/> Designed by <strong>Hrash Doshi</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+</footer>
+</body>
+</html>
+
