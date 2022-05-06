@@ -26,17 +26,14 @@ def start():
 def chatbot():
     return render_template('chatbot.html')
 
-@app.route('/catalogue_Diseases')
-def catalogue_Diseases():
-    return render_template('catalogue-Diseases.html')
+@app.route('/health_checkup')
+def health_checkup():
+    return render_template('health_checkup.html')
 
-@app.route('/catalogue_Hospitals')
-def catalogue_Hospitals():
-    return render_template('catalogue-Hospitals.html')
 
-@app.route('/catalogue_DrugInfo')
-def catalogue_DrugInfo():
-    return render_template('catalogue-DrugInfo.html')
+@app.route('/bmi_calculator')
+def bmi_calculator():
+    return render_template('bmi_calculator.html')
 
 @app.route('/contact')
 def contact():

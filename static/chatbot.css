@@ -17,8 +17,7 @@
 }
 
 body {
-    background-color: #e4602c;
-    background-image: url("static//chatbody.png");
+    background: linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
 }
 
 .card-header:first-child {

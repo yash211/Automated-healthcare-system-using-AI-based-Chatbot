@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    /*function artic(){
+  document.getElementById("art").style.visibility="visible";
+hide();
+}
+function hide(){
+  document.getElementById("bmichildiv").style.visibility="hidden";
+  document.getElementById("choldiv").style.visibility="hidden";
+  document.getElementById("bmidiv").style.visibility="hidden";
+  document.getElementById("redblooddiv").style.visibility="hidden";
+       document.getElementById("vitaldiv").style.visibility="hidden";
+       document.getElementById("bpdiv").style.visibility="hidden";
+       document.getElementById("fenadiv").style.visibility="hidden";
+  document.getElementById("bldiv").style.visibility="hidden";
+ 
+}*/
+function showhide(a,b,c,d,e,f,g,h,i)
+
+{
+  var SHOW_HIDE=['hidden','visible'];
+  
+document.getElementById("bmichildiv").style.visibility=SHOW_HIDE[a];
+  document.getElementById("bmidiv").style.visibility=SHOW_HIDE[b];
+  document.getElementById("choldiv").style.visibility=SHOW_HIDE[c];
+  document.getElementById("redblooddiv").style.visibility=SHOW_HIDE[d];
+  document.getElementById("vitaldiv").style.visibility=SHOW_HIDE[e];
+  document.getElementById("bpdiv").style.visibility=SHOW_HIDE[f];
+  document.getElementById("fenadiv").style.visibility=SHOW_HIDE[g];
+      document.getElementById("bldiv").style.visibility=SHOW_HIDE[h];
+  document.getElementById("art").style.visibility=SHOW_HIDE[i];
+
+}
+chart();
+//functions for calculation programs
+function agecheck(){
+var childage=document.getElementById("age").value;
+if (childage > 17){
+alert("Please use the adult BMI calculator.");
+document.getElementById("age").innerHTML="";
+}
+}
+function computeBMI() {
+     //user inputs
+    var height = Number((document.getElementById('height').value) / 100);
+var weight = Number(document.getElementById('weight').value);
+
+var bmi=weight/Math.pow(height, 2);
+var BMI=parseFloat(bmi).toFixed(2);
+document.getElementById("output").innerHTML=BMI;
+    if (BMI < 13){ document.getElementById("comment").innerHTML ="Underweight";}
+    else if (BMI >= 14 && BMI <= 18){ document.getElementById("comment").innerHTML = "Healthy weight";}
+    else if (BMI >= 19 && BMI <= 22) {document.getElementById("comment").innerHTML = "Overweight";}
+    else if (BMI => 23) {document.getElementById("comment").innerHTML = "Obese";            }
+}
+function BMI(){
+var Height = Number((document.getElementById('HEIGHT').value) / 100);
+var Weight = Number(document.getElementById('WEIGHT').value);
+
+var Bmi=Weight/Math.pow(Height, 2);
+var bMI=parseFloat(Bmi).toFixed(2);
+document.getElementById("outputs").innerHTML=bMI;
+if (bMI < 19) {document.getElementById("comments").innerHTML= "Underweight";}
+   
+       else if (bMI >= 19 && bMI <= 27){document.getElementById("comments").innerHTML= "Normal";}
+   else if (bMI >= 28 && bMI <= 30.5){ document.getElementById("comments").innerHTML= "Overweight";}
+   else if (bMI > 30.5){document.getElementById("comments").innerHTML= "Obese";            }
+       
+}
+//cholestrol program
+var gen_count=0; 
+var count=0;
+function genm(){
+gen_count = 1;
+
+}
+function genf(){
+
+gen_count = 0;
+
+}
+//Cholestral for male
+function calculatefor(){
+if (count==0){
+document.getElementById("calculate").disabled="true";
+}
+if (gen_count==1){
+
+var a = document.getElementById("total").value;
+var b = document.getElementById("hdl").value;
+var c = document.getElementById("ldl").value;
+var d = document.getElementById("tri").value;
+var total_hdl = Number(a)/Number(b);
+var ldl_hdl = Number(c)/Number(b);
+// Ratio of total/hdl
+if (total_hdl <= 3.4){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests a very low risk of cardiovascular disease."
+}
+
+else if (total_hdl >3.4 || total_hdl <=4.0){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests a low risk of cardiovascular disease."
+}
+else if (total_hdl > 4.0 || total_hdl <=5){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests average risk of cardiovascular disease."
+}
+else if (total_hdl >5  || total_hdl <=9.5){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests moderate risk of cardiovascular disease."
+}
+else if (total_hdl > 10){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests high risk of cardiovascular disease."
+}
+
+//Ratio of ldl/hdl
+
+if (ldl_hdl < 1.5 ) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests a very low risk of cardiovascular disease.";
+}
+else if (ldl_hdl => 1.6 || ldl_hdl <= 3.6) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests average risk of cardiovascular disease.";
+}
+else if (ldl_hdl => 3.7 || ldl_hdl < 6.4) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests moderate risk of cardiovascular disease.";
+}
+else if (ldl_hdl => 6.4) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests high risk of cardiovascular disease.";
+}
+}
+else{
+//Cholestral for female
+if (gen_count==0){
+var a = document.getElementById("total").value;
+var b = document.getElementById("hdl").value;
+var c = document.getElementById("ldl").value;
+var d = document.getElementById("tri").value;
+var total_hdl = Number(a)/Number(b);
+var ldl_hdl = Number(c)/Number(b);
+
+//Ratio of total/hdl
+if (total_hdl <= 3.5){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests a very low risk of cardiovascular disease."
+}
+
+else if (total_hdl >3.5 || total_hdl <=3.8){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests a low risk of cardiovascular disease."
+}
+else if (total_hdl > 3.8 || total_hdl <=4.5){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests average risk of cardiovascular disease."
+}
+else if (total_hdl => 4.6 || total_hdl < 7){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests moderate risk of cardiovascular disease."
+}
+else if (total_hdl => 8){
+document.getElementById("errordiv").innerHTML+= "<br>The TC/HDL ratio is"+" "+total_hdl+"."+"This value suggests high risk of cardiovascular disease."
+}
+
+//ratio of ldl/hdl
+
+if (ldl_hdl < 1.5 ) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests a very low risk of cardiovascular disease.";
+}
+else if (ldl_hdl => 1.6 || ldl_hdl <= 3.2) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests average risk of cardiovascular disease.";
+}
+else if (ldl_hdl => 3.3 || ldl_hdl <=5) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests moderate risk of cardiovascular disease.";
+}
+else if (ldl_hdl => 5) {
+document.getElementById("errordiv").innerHTML+= "<br>The LDL/HDL ratio is"+" "+ldl_hdl+"."+"This value suggests high risk of cardiovascular disease.";
+}
+
+
+}
+}
+}
+function rst2(){
+document.getElementById("calculate").disabled=false;
+document.getElementById("total").value="";
+document.getElementById("hdl").value="";
+document.getElementById("ldl").value="";
+document.getElementById("tri").value="";
+document.getElementById("errordiv").innerHTML="";
+}
+/*
+function remedy(){
+document.getElementById("solve").innerHTML+="1. Olive oil"+
+"<br>The type of heart-healthy fat found in olives and olive oil can increase your HDL and lower the inflammatory impact of LDL cholesterol on your body."+
+
+"<br>Swap extra-virgin olive oil for all your other oils and fats when cooking at low temperatures, as extra virgin olive oil breaks down at high temperatures. Use the oil in salad dressings, sauces, and to flavor foods once they’re cooked. Sprinkle chopped olives on salads or add them to soups, like this Sicilian Fish Soup. Just be sure to use this food in moderation because it’s high in calories too."+
+
+"<br><br>Part 5 of 16"+
+"<br>2. Beans and legumes"+
+"<br>Like whole grains, beans and legumes are a great source of soluble fiber. Reach for black beans, black-eyed peas, kidney beans, navy beans, lentils, and others. Canned beans contain about half as much folate as cooked dry beans. Folate is an important B-vitamin that’s healthy for your heart."+
+
+"<br><br>Beans and legumes are great in side dishes, like in this Cajun Corn and Kidney Beans salad, or in soup, like this Italian Style White Bean and Kale Soup. You can also whip up this Spicy Southwestern Black Bean Chili during the week for an easy, family-friendly dinner."+
+
+"<br><br>Part 6 of 16"+
+"<br>3. Whole grains"+
+"<br>Whole grains, including bran, cereals, and brown or wild rice may give your HDL levels a boost. That’s because they contain fiber, specifically soluble fiber."+
+
+"<br><br>Have at least two servings of whole grains per day. That could be as simple as a comforting bowl of oatmeal for breakfast, 100 percent whole-grain bread at lunch, and a side of brown rice at dinner."
+
+/*Part 7 of 16
+4. High-fiber fruit
+Fruits with a lot of fiber, such as prunes, apples, and pears, can boost your HDL levels and lower your LDL levels. Slice them up and stir them into cereal or oatmeal, or throw them into your blender and create a delicious smoothie. They’re just as great plain, too, either as a mid-afternoon snack or a treat after dinner.
+
+Part 8 of 16
+5. Fatty fish
+Omega-3 fatty acids, which are found in fish, can lower your LDL and increase your HDL. Look for fattier options, such as salmon, mackerel, albacore tuna, sardines, and rainbow trout.
+
+Aim for two servings of fish per week. If you don’t like fish or can’t eat enough fish to fulfill your omega-3 goals, ask your doctor about fish oil or krill oil supplements. These over-the-counter supplements can deliver more than 1,000 mg of omega-3-rich oil in each pill but still don’t deliver the same benefits as food itself.
+
+Part 9 of 16
+6. Flax
+Ground flaxseeds and flaxseed oil also contain omega-3 fatty acids. Many vegetarians use flaxseed as a source of omega-3 fatty acids because they’re one of the better plant-based sources of this heart-healthy fat.
+
+Make sure to buy ground flaxseed. Whole flaxseeds are almost impossible for your body to break down, which means they pass through your body largely intact and never leave behind any of their nutrients.
+
+Ground flaxseed can be sprinkled into your morning cereal, oatmeal, salads, dips, or yogurt, or added to baked goods. Flaxseed oil is a welcome addition to salad dressings or smoothies.";
+}
+*/
+
+var cout=1;
+
+function calculate(){
+if(cout==1){
+document.getElementById("f").style.visibility = "visible";
+document.getElementById("heading").style.visibility = "visible";
+document.getElementById("calc").disabled = "true";    
+}
+var a=Number(document.getElementById("hemo").value);
+var b=Number(document.getElementById("hemoglo").value);
+var c=Number(document.getElementById("rbc").value);
+if(a=="" && b=="" && c==""){
+alert("Please input AT LEAST 2 fields out of the 3 fields available!");
+rst1();
+}
+var cal=(a/c)*10;
+var Cal=parseFloat(cal).toFixed(2);
+var cal2=(b/c)*10;
+var Cal2=parseFloat(cal2).toFixed(2);
+var cal3=(b/a)*100;
+var Cal3=parseFloat(cal3).toFixed(2);
+document.getElementById("result").innerHTML="MCV = "+cal+" fl";
+document.getElementById("result").innerHTML+="<br>MCHC = "+cal2+" g/dL";
+document.getElementById("result").innerHTML+="<br>MCH = "+cal3+"  pg";
+}
+function rst3(){
+document.getElementById("hemo").value="";
+document.getElementById("hemoglo").value="";
+document.getElementById("rbc").value="";
+document.getElementById("result").innerHTML="";
+document.getElementById("calc").disabled = false; 
+chart();
+
+}
+function chart(){
+document.getElementById("f").style.visibility = "hidden";
+document.getElementById("heading").style.visibility = "hidden";
+}
+
+var GEN_COUNT;
+var COUNT=1;
+function GENM(){
+GEN_COUNT = 1;
+
+}
+function GENF(){
+
+GEN_COUNT = 0;
+
+}
+
+function CALCULATEFOR(){
+if (COUNT==1){
+ document.getElementById("calculate").disabled = "true";    
+ }
+var resul="Normal Vital Capacity = ";
+//vital capacity for male
+if (GEN_COUNT==1){
+
+var a = document.getElementById("YEARS").value;
+var b = document.getElementById("CM").value;
+var c = ((27.63-0.112*a)*b)/1000;
+var res=parseFloat(c).toFixed(3); 
+document.getElementById("RESULT").innerHTML=resul+res+"  litres";
+}
+//vital capacity for female
+
+else{
+if(GEN_COUNT==0){
+var a = document.getElementById("YEARS").value;
+var b = document.getElementById("CM").value;
+var c = ((21.78-0.101*a)*b)/1000;
+var res=parseFloat(c).toFixed(3);  
+document.getElementById("RESULT").innerHTML=resul+res+"  litres";
+}
+}
+
+}
+function rst4(){
+document.getElementById("calculate").disabled = false;
+document.getElementById("YEARS").value="";
+document.getElementById("CM").value="";
+}
+var kount = 0;
+
+function check(){ 
+var a =Number(document.getElementById("sp").value);
+var b =Number(document.getElementById("dp").value);
+if(a<b){
+alert("Systolic pressure (SP) is greater than Diastolic pressure (DP)!");
+}
+
+else{
+calculatesysdi();
+kount=1;
+}
+}
+function calculatesysdi(){
+if(kount==1){
+document.getElementById('BPcal').disabled="true";
+}
+var a =Number(document.getElementById("sp").value);
+var b =Number(document.getElementById("dp").value);
+var pp =a-b;
+var fma=2*b;
+var sma=fma+a;
+var map=Math.round(sma/3);
+document.getElementById("FINISH").innerHTML="<br>Mean Artereial Pressure (MAP) "+" = "+map;
+var Pp="Pulse Pressure (PP) = ";
+var status="Blood pressure status : ";
+if (a<120 && b<80){
+ document.getElementById("FINISH").innerHTML+="<br>"+status+"Normal Blood Pressure";
+ }
+else if(a>119&&a<140 || b>79&&b<90){
+ document.getElementById("FINISH").innerHTML+="<br>"+status+"Pre-hypertension";
+ }
+else if(a>139&&a<160 || b>89&&b<100){
+     document.getElementById("FINISH").innerHTML+="<br>"+status+"Stage I high blood pressure-hypertension";
+     }
+else if(a>159&&a<181 || b>99&&b<111){
+     document.getElementById("FINISH").innerHTML+="<br>"+status+"Stage II high blood pressure-hypertension";
+     }
+else if(a>180 || b>110){
+     document.getElementById("FINISH").innerHTML+="<br>"+status+"Hypertensive crisis(where emergency care is required)";
+     }
+document.getElementById("FINISH").innerHTML+="<br>"+Pp+pp;
+
+}
+function rst5(){
+kount = 0;
+document.getElementById("BPcal").disabled = false;
+document.getElementById("sp").value="";
+document.getElementById("dp").value="";
+document.getElementById("FINISH").innerHTML="";
+}
+var counting = 0;
+function calculateFeNa(){
+var a = Number(document.getElementById("usod").value);
+var b = Number(document.getElementById("ucre").value);
+var c = Number(document.getElementById("psod").value);
+var d = Number(document.getElementById("pcre").value);
+var cal = (a*d);
+var dal = (b*c);
+var div = (cal/dal);
+var per = (div*100);
+var rel = parseFloat(per).toFixed(2);
+counting=1;
+if (counting==1){
+ document.getElementById("calculate1").disabled=true;
+ }
+document.getElementById("resulting").innerHTML="FE<sub>Na</sub>"+" = "+rel+"%";
+if (rel < 1){
+  document.getElementById("resulting").innerHTML+="<br>FE<sub>Na</sub>"+"interpretation:"+"  "+"Pre-renal pathology";
+ }
+else if(rel =>1 || rel<=4){
+     document.getElementById("resulting").innerHTML+="<br>FE<sub>Na</sub>"+"interpretation:"+"  "+"Intrinsic-renal pathology";
+     }
+else if(rel >4){
+     document.getElementById("resulting").innerHTML+="<br>FE<sub>Na</sub>"+"interpretation:"+"  "+"Post-renal pathology";
+     }
+
+
+}
+function rst6(){
+count = 0;
+document.getElementById("calculate1").disabled = false;
+document.getElementById("usod").value="";
+document.getElementById("ucre").value="";        
+document.getElementById("psod").value="";
+document.getElementById("pcre").value="";
+document.getElementById("resulting").innerHTML="";
+}
+counting = 0;
+var gentle_count=0; 
+var countingss=0;
+function genmen(){
+gentle_count = 1;
+
+}
+function genfem(){
+
+gentle_count = 0;
+
+}
+function calcu(){
+if(gentle_count==1){
+var a=Number(document.getElementById("wei").value);
+var b=Number(document.getElementById("hei").value);
+var c=b/100;
+var d=Math.pow(c, 3);
+var e=0.3669*d+0.03219*a+0.6041;
+var f=parseFloat(e).toFixed(2);
+document.getElementById("errordiv1").innerHTML="Result:<br>"+
+"Your total blood volume is:  "+f+" Litres";
+}
+else{
+if(gentle_count==0){
+  var a=Number(document.getElementById("wei").value);
+var b=Number(document.getElementById("hei").value);
+var c=b/100;
+var d=Math.pow(c, 3);
+var e=0.3561*d+0.03308 *a+0.1833;
+var f=parseFloat(e).toFixed(2);
+document.getElementById("errordiv1").innerHTML="Result:<br>"+
+"Your total blood volume is:  "+f+" Litres";
+  }
+}
+}
+function rst7(){
+document.getElementById("wei").value="";
+document.getElementById("hei").value="";
+document.getElementById("errordiv1").innerHTML="";
+}
+/*function result(){
+if(){
+
+}
+}*/
+
+  </script>
+    <title>HEALTH CHECKING</title>
+    <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT81b776ljXwOf_9Yer1WGOqt3r_yt1XUvvCBd7udmSUc3xTqZ7" rel="short icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="static\hcheck.css">
+    <script src="../js/Task.js"></script>
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
+        .row.content {
+            height: 500px
+        }
+        /* Set gray background color and 100% height */
+
+        .sidenav {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+        /* Set black background color, white text and some padding */
+
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+        /* On small screens, set height to 'auto' for sidenav and grid */
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {
+                height: auto;
+            }
+        }
+
+        li{
+           list-style-type: none;
+        }
+    </style>
+</head>
+
+<body onload="showhide(0,0,0,0,0,0,0,0,1)">
+    <div class="obtain">
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-3 sidenav">
+                    <h2>Health check-up</h2>
+
+                        <!-- <li><button type="button" class="btn btn-primary lef" onclick="showhide(0,1,0,0,0,0,0,0,0)">BMI Calculator</button></li>
+                        <br> -->
+                        <li><button type="button" class="btn btn-primary lef" onclick="showhide(0,0,1,0,0,0,0,0,0)">Cholestrol Calculator</button></li>
+                        <br>
+                        <li><button type="button" class="btn btn-primary lef" onclick="showhide(0,0,0,1,0,0,0,0,0)">Red Blood Cell (RBC) Indices Calculator</button></li>
+                        <br>
+                        <li><button type="button" class="btn btn-primary lef" onclick="showhide(0,0,0,0,1,0,0,0,0)">NORMAL VITAL CAPACITY Calculator</button></li>
+                        <br>
+                        <li><button type="button" class="btn btn-primary lef" onclick="showhide(0,0,0,0,0,1,0,0,0)">Blood Pressure Calculator</button></li>
+                        <br>
+                        <li><button type="button" class="btn btn-primary lef" onclick="showhide(0,0,0,0,0,0,1,0,0)">FENa CALCULATOR</button></li>
+                        <br>
+                        <li><button type="button" class="btn btn-primary lef" onclick="showhide(0,0,0,0,0,0,0,1,0)">BLOOD CALCULATOR</button></li>
+            
+                    </div>
+
+                    <div class="col-sm-9">
+                        <h4><small></small></h4>
+                        <hr>
+                        <div id="art">
+                            <header class="entry-header">
+                                <h1 class="entry-title" itemprop="headline">Why Health is Important? How to maintain Good Health?</h1>
+                            </header>
+                            <div class="entry-content" itemprop="text">
+                                <p><strong>Good Health</strong> is the greatest blessing of life. Life is a weary burden to a person of broken health. The richest man with bad health always suffers and groans. He is unhappy in spite of his great wealth.</p>
+                                <h2>The importance of good health</h2>
+                                <p>Good health is very important because a person of good health can put through a large amount of work in a short time.</p>
+                                <p>A person of perfect health does not shirk his duties. He can work properly and leaves nothing undone. As a student, he shines in his examinations. As a public worker, he renders valuable service and is duly rewarded.</p>
+                                <p>The cultivator generally enjoys excellent health. He works in the field year in and year out and produces plentiful crops.</p>
+                                <p>A sound mind in a sound body is a very popular and wise saying. A person in the pink of health enjoys all the good things of life. He finds vigor and strength to do his work. He relishes the food he takes. He feels life in every limb.<br /> He keeps a cheerful temper and goes through life’s journey with joy.</p>
+                                <p>Therefore, good health is a priceless blessing in life. The famous saying &#8216;Health is Wealth</a>&#8216; highlights the importance of good health in our life.</p>
+                                <p>Also read:Short Paragraph on Importance of Good Health</a>
+                                </p>
+                                <h2>Top ways to maintain good health</h2>
+                                <p><strong>1. Physical exercise:</strong> Good health can be gained and preserved by plenty of exercise in the open air. They may take exercise in any gymnasium regularly. However, too much of exercise is bad and harmful. Physical exercise should be taken regularly and only for a short period.</p>
+                                <p><strong>2. Early morning walk:</strong> We should get up early and take a brisk walk.</p>
+                                <p><strong>3. Play:</strong> Younger men may play football or cricket and any >outdoor game</a>. They may swim or row boats.</p>
+                                <p><strong>4. Balanced diet:</strong> Our diet should be balanced. We should take proper food. Ordinary, food that we take is enough for health, if we take it fresh and in proper quantity. Too much eating in extremely bad for health. The food that we eat is to be taken in regular hours. Another important thing about food is that we should not bolt our meals. Food taken hurriedly is not well digested.</p>
+                                <p><strong>5. Proper rest and sleep:</strong> Another thing about health is that we should rest and sleep in time. Early to bed and early to rise is the golden rule of health. A person, who labors too hard may ruins health soon.</p>
+                                <p><strong>6. Keep anxieties away:</strong> The essential thing for staying in good health is to free the mind from cares and anxieties as far as possible. A care-worn man cannot enjoy his rest or sleep soundly at night.</p>
+                            </div>
+                            <!---->
+                            <!-- calculation programs-->
+                            <!---->
+                            <div id="bmichildiv">
+                                <h1>Health Calculators</h1>
+                                <h1>Child and young person's Body Mass Index (BMI) calculator</h1>
+                                <p>Please enter the child/young person's age:
+                                    <input type="number" min="0" id="age" onchange="agecheck()"></input>
+                                </p>
+                                <p>Enter your height:
+                                    <input type="text" id="height" />
+                                    <button>centimetres</button>
+
+                                </p>
+                                <p>Enter your weight:
+                                    <input type="text" id="weight" />
+                                    <button>kilograms</button>
+                                </p>
+                                <p>Gender
+                                    <input name="gender" type="radio" value="Male">Male</input>
+                                    <input type="radio" value="Female" name="gender">Female</input>
+                                </p>
+                                <input type="button" value="computeBMI" onclick="computeBMI()" />
+                                <h1>Your BMI is: <span id="output"></span></h1>
+
+                                <h2>This means you are: value = <span id="comment"></span> </h2>
+                            </div>
+                            <div id="bmidiv">
+                                <h1>Health Calculators</h1>
+                                <h1>Body Mass Index Calculator</h1>
+                                <p>Enter your height:
+                                    <input type="text" id="HEIGHT" />
+                                    <button>centimetres</button>
+
+                                </p>
+                                <p>Enter your weight:
+                                    <input type="text" id="WEIGHT" />
+                                    <button>kilograms</button>
+                                </p>
+                                <p>Gender
+                                    <input name="gender" type="radio" value="Male">Male</input>
+                                    <input type="radio" value="Female" name="gender">Female</input>
+                                </p>
+                                <input type="button" value="computeBMI" onclick="BMI()" />
+                                <h1>Your BMI is: <span id="outputs"></span></h1>
+
+                                <h2>This means you are: value = <span id="comments"></span> </h2>
+
+                            </div>
+                            <div id="choldiv">
+                                <h1>Health Calculators</h1>
+                                <h1><span>Cholesterol Calculator</span></h1>
+                                <p>This <strong>cholesterol calculator</strong> explains what your TC, HDL LDL and triglyceride levels mean and whether you are under any risk for heart disease. Discover more on cholesterol levels and their effects in the text and tables below the form.</p>
+                                <p>
+                                    Enter at least 3 of the 4 fields below then press Calculate to determine the forth value, an interpretation of your cholesterol levels and the TC/HDL and LDL/HDL ratios:
+                                </p>
+                                <div>Total Cholesterol: <span>*</span></div>
+                                <input type="number" min="0" placeholder="mg/dl" id="total">
+
+                                <div>HDL Cholesterol: <span class="font-required">*</span></div>
+                                <input type="number" min="0" placeholder="mg/dl" id="hdl">
+                                <div>LDL Cholesterol: <span class="font-required">*</span></div>
+
+                                <input type="number" min="0" placeholder="mg/dl" id="ldl">
+
+
+                                <div>Triglycerides: <span>*</span></div>
+
+                                <input name="tri" class="part" type="number" min="0" placeholder="mg/dl" id="tri">
+
+                                <div>Gender: <span>*</span></div>
+
+                                <p id='p'></p>
+                                <input type="radio" name="gender" id='male' onclick="genm()"> Male<br>
+                                <input type="radio" name="gender" value="female" onclick="genf()"> Female<br>
+
+                                <input type="submit" value="Calculate" onclick="calculatefor()" id="calculate"></input>
+                                
+                                <input type="submit" value="Reset" onclick="rst2()"></input>
+                                <div id="errordiv"></div>
+                                <div id="solve"></div>
+                            </div>
+                            <div id="redblooddiv">
+                                <h1>Health Calculators</h1>
+                                <h1><span>Red Blood Cell (RBC) Indices Calculator</span></h1>
+                                <p>This <strong>red blood cell (RBC) indices calculator</strong> determines the MCV, MCHC and MCH which are the mean corpuscular volume, hemoglobin and Hb concentration of erythrocytes. Below the form you can find more information on the red blood cell indices, how each of them is calculated and what their normal ranges are.</p>
+                                <div>Hematocrit:</div>
+                                <div>
+                                    <input name="fr" type="text" placeholder="%" id="hemo">
+                                </div>
+                                <div>Hemoglobin:<span>*</span></div>
+                                <div>
+                                    <input type="text" placeholder="g/dL" id="hemoglo">
+                                </div>
+                                <div>RBC:<span>*</span></div>
+                                <div>
+                                    <input type="text" class="part" id="rbc">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="clearfix"><input type="button" value="x10&#185;&#178;/L"><sup></sup></input>
+                                </div>
+                                <div id="here"></div>
+                                <div class="clearfix"></div>
+                                <input type="submit" value="Calculate" onclick="calculate()" id="calc" />
+                                <input type="button" value="Reset" onclick="rst3()" />
+                                <div id="result"></div>
+
+
+                                <h1> Normal ranges for the 3 parameters are:</h1>
+
+                                <table class="table table-striped s" id="f">
+                                    <thead>
+                                        <tr>
+                                            <th>Parameter</th>
+                                            <th>Normal Range</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>MCV</td>
+                                            <td>80-96 fL</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>MCHC</td>
+                                            <td>33.4-35.5 g/dL</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>MCH</td>
+                                            <td>27-35 pg</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div id="vitaldiv">
+                                <h1>Health Calculators</h1>
+                                <h1><span>Normal Vital Capacity Calculator</span></h1>
+                                <p>This <strong>normal vital capacity calculator</strong> estimates vital capacity based on gender, age and height when inspiratory, tidal and expiratory volumes are not available. Below the form, there are instructions on how to compute VC by this method and information on the factors taken into account.</p>
+                                <div>Gender: <span>*</span></div>
+
+                                <p id='p'></p>
+                                <input type="radio" name="gender" id='male' onclick="GENM()"> Male<br>
+                                <input type="radio" name="gender" value="female" onclick="GENF()"> Female<br>
+
+                                <div>Age:</div>
+                                <div>
+                                    <input name="ag" type="text" placeholder="years" id="YEARS">
+                                </div>
+                                <div>Height:<span>*</span></div>
+                                <div>
+                                    <input type="text" class="part" placeholder="centimeters" id="CM">
+                                </div>
+
+                                <input type="submit" name="submit" value="Calculate" onclick="CALCULATEFOR()" id="calculate" />
+                                <input type="button" value="Reset" onclick="rst4()" />
+                                <div id="RESULT"></div>
+                            </div>
+
+                            <div id="bpdiv">
+                                <h1>Health Calculators</h1>
+                                <h1><span>Blood Pressure Calculator</span></h1>
+                                <p>This <strong>blood pressure calculator</strong> estimates your mean arterial pressure based on your values of systolic and diastolic pressures. You can read more about these determinations below the form.</p>
+                                <div>Systolic pressure (SP):<span>*</span></div>
+                                <div>
+                                    <input id="sp" type="text" placeholder="mmHg">
+                                </div>
+
+                                <div>Diastolic pressure (DP):<span>*</span></div>
+                                <div>
+                                    <input id="dp" type="text" placeholder="mmHg">
+                                </div>
+
+                                <input type="submit" name="submit" value="Calculate" onclick="check()" id="BPcal" />
+                                <input type="button" value="Reset" onclick="rst5()" />
+                                <div id="FINISH"></div>
+
+                            </div>
+                            <div id="fenadiv">
+                                <h1>Health Calculators</h1>
+                                <h1><span>FENa Calculator</span></h1>
+                                <p>This <strong>FENa calculator</strong> estimates the fractional excretion of sodium to determine the cause of renal failure, be it pre, post or intrinsic renal pathology. Discover more on this subject below the form.</p>
+                                <div>Urine sodium [U<sub>Na</sub>]:<span>*</span></div>
+
+                                <input name="u_sodium" type="text" placeholder="mEq/L" id="usod">
+
+
+                                <div>Urine creatinine [U<sub>Cr</sub>]:<span>*</span></div>
+
+                                <div><input name="u_creatinine" type="text" placeholder="mg/dL" id="ucre">
+                                </div>
+                                <div>Plasma sodium [P<sub>Na</sub>]:<span>*</span></div>
+                                <div>
+                                    <input name="p_sodium" type="text" placeholder="mEq/L" id="psod">
+                                </div>
+                                <div>Plasma creatinine [P<sub>Cr</sub>]:<span>*</span></div>
+                                <div>
+                                    <input name="p_creatinine" type="text" placeholder="mg/dL" id="pcre">
+                                </div>
+
+                                <input type="submit" name="submit" value="Calculate" onclick="calculateFeNa()" id="calculate1"></input>
+                                <input type="button" value="Reset" onclick="rst6()" id="res"></input>
+                                <div id="resulting"></div>
+                            </div>
+                            <div id="bldiv">
+                                <h1>Health Calculators</h1>
+                                <h1><span itemprop="name">Blood Calculator</span></h1>
+                                <p>This <strong>blood calculator </strong>helps you answer to how much blood is in the human body, more precisely in your own body depending on the height and weight. Discover more about the Nadler Method and on the blood composition below the form.</p>
+                                <div class="span3">Your gender:
+                                </div>
+                                <input type="radio" name="gender" id='male' onclick="genmen()"> Male<br>
+                                <input type="radio" name="gender" value="female" onclick="genfem()"> Female<br>
+                                <div class="span2">
+
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="span3">Your weight: <span class="font-required">*</span></div>
+                                <div class="span2">
+                                    <input name="weight" size="3" maxlength="3" type="text" placeholder="kg" id="wei">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div>Your height: <span class="font-required">*</span></div>
+                                <div>
+                                    <input size="3" maxlength="3" type="text" placeholder="cm" id="hei">
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <input type="submit" name="submit" value="Calculate" onclick="calcu()" />
+                                <input type="submit" name="submit" value="Reset" onclick="rst7()" />
+                                <div id="errordiv1"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+</body>
+
+</html>

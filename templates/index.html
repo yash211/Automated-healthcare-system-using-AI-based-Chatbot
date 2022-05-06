@@ -30,15 +30,15 @@
 <div id="mySidenav" class="sidenav customnew" style="width: 0;" >
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a class="nav-link" href="{{ url_for('about') }}">About</a>    
-    <a class="nav-link" href="{{ url_for('service') }}">Services</a>
+    <!-- <a class="nav-link" href="{{ url_for('service') }}">Services</a>
     <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
-    <a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a>
+    <a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a> -->
     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" > Catalogue
       </a>
       <div class="dropdown-menu" >
-       <a class="dropdown-item" href="{{ url_for('catalogue_Diseases') }}">Diseases</a>
-        <a class="dropdown-item" href="{{ url_for('catalogue_DrugInfo') }}">Drug Information</a>
-        <a class="dropdown-item" href="{{ url_for('catalogue_Hospitals') }}">Hospitals</a>
+        <a class="dropdown-item" href="{{ url_for('chatbot') }}">Chabot</a>
+        <a class="dropdown-item" href="{{ url_for('bmi_calculator') }}">BMI calculator</a>
+        <a class="dropdown-item" href="{{ url_for('health_checkup') }}">Health Checkup</a>
       </div>
       <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
       <a class="nav-link" href="http://instagram.com/dreamsjewels" ><i class="fa fa-instagram" aria-hidden="true" style="font-size: 40px;"></i></a>
@@ -50,12 +50,12 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ url_for('about') }}" style="padding-right: 40px;">About</a>
     </li>
-    <li class="nav-item ">
+    <!-- <li class="nav-item ">
       <a class="nav-link" href="{{ url_for('service') }}"style="padding-right: 40px;">Services</a>
 </li>
     <li class="nav-item">
       <a class="nav-link" href="{{ url_for('faq') }}"style="padding-right: 40px;">FAQ&nbsp;&nbsp;</a>
-    </li>
+    </li> -->
   </ul>
 </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
@@ -69,22 +69,22 @@
     </div>
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2 ">
     <ul class="navbar-nav mr-auto text-center">
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="{{ url_for('subscribe') }}" style="padding-right: 40px;">Subscribe</a>
-    </li>
+    </li> -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="padding-right: 40px;">
         Catalogue
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="{{ url_for('catalogue_Diseases') }}">Diseases</a>
-        <a class="dropdown-item" href="{{ url_for('catalogue_DrugInfo') }}">Drug Information</a>
-        <a class="dropdown-item" href="{{ url_for('catalogue_Hospitals') }}">Hospitals</a>
+        <a class="dropdown-item" href="{{ url_for('chatbot') }}">Chabot</a>
+        <a class="dropdown-item" href="{{ url_for('bmi_calculator') }}">BMI calculator</a>
+        <a class="dropdown-item" href="{{ url_for('health_checkup') }}">Health Checkup</a>
       </div>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="{{ url_for('contact') }}" style="padding-right: 40px;">Contact</a>
-    </li>
+    </li> -->
     <li class="nav-item logo1" >
       <a class="nav-link" href="http://instagram.com/h.d0017" ><i class="fa fa-instagram" aria-hidden="true" style="font-size: 40px;"></i></a> </li>
       <li class="nav-item logo2">
@@ -152,9 +152,9 @@
   </div>
   <div class="leftbox">
     <ul class="list-groups" style="list-style: none;font-family: Courier New, monospace;text-align: center;padding-right: 20px;">
-      <li><br><a href="{{ url_for('catalogue_Diseases') }}"><font color="white">DISEASES</font><br><br></a></li>
-      <li><a href="{{ url_for('catalogue_Hospitals') }}"><font color="white">HOSPITALS</font><br><br></a></li>
-      <li><a href="{{ url_for('catalogue_DrugInfo') }}"><font color="white">DRUG INFORMATION</font><br><br></a></li>
+      
+      <li><a href="{{ url_for('bmi_calculator') }}"><font color="white">BMI Calculator</font><br><br></a></li>
+      <li><a href="{{ url_for('health_checkup') }}"><font color="white">Health Checkups</font><br><br></a></li>
       <li><a href="{{ url_for('chatbot') }}"><font color="white">CHATBOT</font></a></li>
       </ul>
       <div class="leftupperbox">

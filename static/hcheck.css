@@ -1,0 +1,100 @@
+.obtain{
+ 
+    min-width: 1500px;
+   }
+   .cont{
+   height:380px;
+   
+   width:35%;
+   position:absolute;
+   }
+   .wid{
+   width:80%;
+   
+   }
+   .wit{
+   width:150%;
+   }
+   .bot{
+   position:relative;
+   top:500px;
+   }
+   .lef{
+   height:50px;
+   width:100%;
+   position:relative;
+   
+   }
+   .lef:hover{
+   color:#337ab7;
+   font-weight: bold;
+   background:white;
+   opacity:0.7; 
+   }
+   /*styles for calculation programs*/
+   #errordiv{
+   height:300px;
+   width:500px;
+   border:2px solid;
+   }
+   #body{
+   position:absolute;
+   
+   }
+   #bmichildiv{
+   height: 600px;
+   width: 100%;
+    border: 1px solid white;
+   position:relative;
+   bottom:690px;
+   }
+   #bmidiv{
+   height: 600px;
+   width: 100%;
+    border: 1px solid white;
+   position:relative;
+   bottom:1300px;
+   }
+   #choldiv{
+    height: 820px;
+   width: 100%;
+   border: 1px solid white;
+   position:relative;
+   bottom:1930px;
+   }
+   #redblooddiv{
+   height: 710px;
+   width: 100%;
+   border: 1px solid white;
+   position:relative;
+   bottom:2750px;
+   }
+   #vitaldiv{
+   height: 410px;
+   width: 100%;
+   border: 1px solid white;
+   position:relative;
+   bottom:3460px;
+   }
+   #bpdiv{
+   height: 410px;
+   width: 100%;
+   border: 1px solid white;
+   position:relative;
+   bottom:3840px;
+   }
+   #fenadiv{
+   height: 465px;
+   width: 100%;
+   border: 1px solid white;
+   position:relative;
+   bottom:4255px;
+   }
+   #bldiv{
+   height: 465px;
+   width: 100%;
+   border: 1px solid white;
+   position:relative;
+   bottom:4720px;
+   }
+   

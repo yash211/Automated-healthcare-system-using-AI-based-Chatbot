@@ -78,11 +78,16 @@ rfx=RandomForestClassifier(max_depth=10)
 rfx.fit(X_train,y_train)
 
 #Getting accuracy
-from sklearn.metrics import accuracy_score,classification_report
+from sklearn.metrics import accuracy_score,classification_report,plot_confusion_matrix
 predict_x=rfx.predict(X_test)
 predict = model.predict(X_test)
 print(accuracy_score(y_test,predict))
 print(accuracy_score(y_test,predict_x))
+
+plot_confusion_matrix(model,X_test,y_test)
+
+import matplotlib.pyplot as plt
+plt.show()
 
 #Random Forest Performs well,now storing useful data
 pickle.dump(rfx, open('model1.pkl', 'wb'))
