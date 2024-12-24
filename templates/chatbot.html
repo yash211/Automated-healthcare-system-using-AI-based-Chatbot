@@ -1,142 +1,185 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/> -->
-    
-    <title>Medical Chatbot</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="static\chatbot.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script>
-            //jquery code
-        jQuery(document).ready(function() {
-                $("input[type=radio][name=categories]").click(function(e) {
-                        e.preventDefault();
-                $.ajax({
-                            type: "POST",
-                            url: "/initialResponse",
-                            data: {
-                                question1: $(this).val()
-                            },
-                            success: function(result) {
-                                // $("#response").append(result.response);
-                                // $("#catres").append(result.sres);
-                                //const ht=`<div class="media media-chat media-chat-reverse"> <div class="media-body"><p id=response>${result.response}</p> </div> </div> <div class="media media-chat"> <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."><div class="media-body"> <p id="catres">${result.sres}</p> </div> </div>`;
-                                const h=`<div class="media media-chat media-chat-reverse">
-                            <div class="media-body" style=float:right>
-                                <p>${result.response}</p>
-                            </div>
-                        </div>
-                        <div class="media media-chat"> <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
-                            <div class="media-body">
-                                <p>${result.sres}</p>
-                            </div>
-                        </div>`
-                                $("#responses").append(h);
-                                //$("#question").val("")
-                            },
-                        });
-                });
+    <title>Medixa - Medical Chatbot</title>
 
-                $("#submit-button").click(function(e) {
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom CSS for Styling -->
+    <link href="static/chatbot.css" rel="stylesheet">
+
+    <!-- jQuery for AJAX functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        // jQuery for handling chat and form submission
+        jQuery(document).ready(function () {
+            $("input[type=radio][name=categories]").click(function (e) {
                 e.preventDefault();
-                        $.ajax({
-                                    type: "POST",
-                                    url: "/mainchat",
-                                    data: {
-                                        questions: $("#question").val()
-                                    },
-                                    success: function(result) {
-                                        var ht;
-                                        if(result.cate=="Disease Prediction"){
-                                            var r="It looks like that you are infected with "+result.response;
-                                            ht=`<div class="media media-chat media-chat-reverse"> <div class="media-body" style=float:right><p id=response>${$("#question").val()}</p> </div> </div> <div class="media media-chat"> <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."><div class="media-body"> <p id="catres">${r}</p> </div> </div>`;
-                                        }
-                                        else if(result.cate=="Drugs Information"){
-                                            detail='';
-                                            fields=["Name","Price","Side Effects","Used for"];
-                                            for(var i=0;i<4;i++){
-                                                detail+=`<div class="media media-chat">
-                                <div class="media-body">
-                                    <p><strong>${fields[i] }</strong> : ${result.response[0][i]}</p>
-                                </div>
-                            </div>`
-                                            }
-                                            ht=`<div class="media media-chat media-chat-reverse"> <div class="media-body" style=float:right><p id=response>${$("#question").val()}</p> </div> </div>`+detail;
-                                        }
-                                        else{
-                                            ht=`<div class="media media-chat media-chat-reverse"> <div class="media-body" style=float:right><p id=response>${$("#question").val()}</p> </div> </div> <div class="media media-chat"> <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."><div class="media-body"> <p id="catres">${result.response}</p> </div> </div>`;
-                                        }
-                                        // const ht=`<div class="media media-chat media-chat-reverse"> <div class="media-body"><p id=response>${$("#question").val()}</p> </div> </div> <div class="media media-chat"> <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."><div class="media-body"> <p id="catres">${result.response}</p> </div> </div>`;
-                                        $("#responses").append(ht);
-                                        $("#question").val()=""
-                                    },
-                                    error: function(result) {
-                                        alert('error');
-                                    }
-                                });
-                        });
-            });
-    </script>
-  </head>
-  <body>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <div class="page-content page-container" id="page-content">
-        <div class="padding">
-            <div class="row container d-flex justify-content-center">
-                <div class="col-md-5">
-                    <div class="card card-bordered">
-                        <div class="card-header" style="background-color: aqua;">
-                            <h4 class="card-title"><strong>Medixa</strong></h4> 
-                            <a href="#">
-                                <span class="glyphicon glyphicon-repeat"></span>
-                            </a>
-                        </div>
-                        <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:400px !important;">
-                            <div class="media media-chat"> <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
-                                <div class="media-body">
-                                    <p>Hi,I am Medixa!!</p>
-                                    <p>Please choose from below category where you want answers for..</p>
+                $.ajax({
+                    type: "POST",
+                    url: "/initialResponse",
+                    data: { question1: $(this).val() },
+                    success: function (result) {
+                        const responseHTML = `
+                            <div class="media media-chat media-chat-reverse">
+                                <div class="media-body" style="float:right;">
+                                    <p>${result.response}</p>
                                 </div>
                             </div>
-                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="left: 20px;">
-                                <input type="radio" class="btn-check" name="categories" id="btnradio1" value="Disease Prediction" autocomplete="off">
+                            <div class="media media-chat">
+                                <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                                <div class="media-body">
+                                    <p>${result.sres}</p>
+                                </div>
+                            </div>`;
+                        $("#responses").append(responseHTML);
+                    },
+                });
+            });
+
+            $("#submit-button").click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "/mainchat",
+                    data: { questions: $("#question").val() },
+                    success: function (result) {
+                        var responseHTML;
+                        if (result.cate == "Disease Prediction") {
+                            const response = `It looks like you are infected with ${result.response}`;
+                            responseHTML = `
+                                <div class="media media-chat media-chat-reverse">
+                                    <div class="media-body" style="float:right;">
+                                        <p>${$("#question").val()}</p>
+                                    </div>
+                                </div>
+                                <div class="media media-chat">
+                                    <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                                    <div class="media-body">
+                                        <p>${response}</p>
+                                    </div>
+                                </div>`;
+                        } else if (result.cate == "Drugs Information") {
+                            // const fields = ["Name", "Price", "Side Effects", "Used for"];
+                            // let detail = '';
+                            // for (let i = 0; i < 4; i++) {
+                            //     detail += `
+                            //         <div class="media media-chat">
+                            //             <div class="media-body">
+                            //                 <p><strong>${fields[i]}</strong>: ${result.response[0][i]}</p>
+                            //             </div>
+                            //         </div>`;
+                            // }
+                            // responseHTML = `
+                            //     <div class="media media-chat media-chat-reverse">
+                            //         <div class="media-body" style="float:right;">
+                            //             <p>${$("#question").val()}</p>
+                            //         </div>
+                            //     </div>
+                            //     ${detail}`;
+                            const fields = ["Name", "Price", "Side Effects", "Used for"];
+                            let detail = '';
+                            for (let i = 0; i < 4; i++) {
+                                detail += `
+            <div class="media media-chat">
+                <div class="media-body">
+                    <p><strong>${fields[i]}</strong>: <span class="response-value">${result.response[0][i]}</span></p>
+                </div>
+            </div>`;
+                            }
+                            responseHTML = `
+        <div class="media media-chat media-chat-reverse">
+            <div class="media-body user-chat" style="float:right;">
+                <p class="user-question">${$("#question").val()}</p>
+            </div>
+        </div>
+        ${detail}`;
+                        } else {
+                            responseHTML = `
+                                <div class="media media-chat media-chat-reverse">
+                                    <div class="media-body" style="float:right;">
+                                        <p>${$("#question").val()}</p>
+                                    </div>
+                                </div>
+                                <div class="media media-chat">
+                                    <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                                    <div class="media-body">
+                                        <p>${result.response}</p>
+                                    </div>
+                                </div>`;
+                        }
+                        $("#responses").append(responseHTML);
+                        $("#question").val("");
+                    },
+                    error: function () {
+                        alert('Error occurred while sending your message.');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body class="bg-light">
+    <div class="page-content page-container" id="page-content">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="card-title mb-0">Medixa - Medical Chatbot</h4>
+                        </div>
+                        <div class="card-body chat-body" id="chat-content">
+                            <div class="media media-chat">
+                                <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png"
+                                    alt="...">
+                                <div class="media-body">
+                                    <p>Hi, I am Medixa! How can I assist you today?</p>
+                                    <p>Please choose a category for assistance:</p>
+                                </div>
+                            </div>
+
+                            <div class="btn-group w-100 mb-3" role="group" aria-label="Category selection">
+                                <input type="radio" class="btn-check" name="categories" id="btnradio1"
+                                    value="Disease Prediction" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="btnradio1">Disease Prediction</label>
-                              
-                                <input type="radio" class="btn-check" name="categories" id="btnradio2" value="Drugs Information" autocomplete="off">
+
+                                <input type="radio" class="btn-check" name="categories" id="btnradio2"
+                                    value="Drugs Information" autocomplete="off">
                                 <label class="btn btn-outline-danger" for="btnradio2">Drugs Information</label>
 
-                                <input type="radio" class="btn-check" name="categories" id="btnradio3" value="home_rem" autocomplete="off">
+                                <input type="radio" class="btn-check" name="categories" id="btnradio3" value="home_rem"
+                                    autocomplete="off">
                                 <label class="btn btn-outline-warning" for="btnradio3">General Questions</label>
                             </div>
-                        
+
                             <div id="responses"></div>
-                            
-                            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                                <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                            </div>
-                            <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
-                                <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
+
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" id="question" placeholder="Type your question..."
+                                        type="text">
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary" id="submit-button">Send</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                        <div class="col-lg-9">
-                            <input class="form-control" style="width: 489px;" placeholder="Type here..." type="text" name="question" id="question">
-                            <button class="btn btn-primary btn-block" id="submit-button" style="margin-top:20px;margin-left: 200px;">Send</button>
-                        
-                
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  </body>
+</body>
+
 </html>

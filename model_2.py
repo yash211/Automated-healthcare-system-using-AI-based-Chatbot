@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import nltk
+
+
 from nltk.stem import WordNetLemmatizer
 import json
 import pickle
@@ -9,6 +11,9 @@ from nltk.corpus import stopwords
 # import tflearn
 import re
 data = open('datasets/intents.json')
+
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 dataset=json.load(data)
 #print(dataset)
@@ -41,11 +46,12 @@ print(id_to_category)
 wl=WordNetLemmatizer()
 def data_preprocess(x):
     modified_messages = []
+    stop_words = set(stopwords.words('english'))
     for i in range(len(x)):
         word = re.sub('[^a-zA-Z]',' ',x[i])
         word = word.lower()
         word = word.split()
-        word = [wl.lemmatize(final_word) for final_word in word if not final_word in set(stopwords.words('english'))]
+        word = [wl.lemmatize(final_word) for final_word in word if not final_word in stop_words]
         word = ' '.join(word)
         modified_messages.append(word)
     df['Questions']=modified_messages
@@ -78,16 +84,16 @@ rfx=RandomForestClassifier(max_depth=10)
 rfx.fit(X_train,y_train)
 
 #Getting accuracy
-from sklearn.metrics import accuracy_score,classification_report,plot_confusion_matrix
+from sklearn.metrics import accuracy_score,classification_report,confusion_matrix
 predict_x=rfx.predict(X_test)
 predict = model.predict(X_test)
 print(accuracy_score(y_test,predict))
 print(accuracy_score(y_test,predict_x))
 
-plot_confusion_matrix(model,X_test,y_test)
+# confusion_matrix(model,X_test,y_test)
 
-import matplotlib.pyplot as plt
-plt.show()
+# import matplotlib.pyplot as plt
+# plt.show()
 
 #Random Forest Performs well,now storing useful data
 pickle.dump(rfx, open('model1.pkl', 'wb'))

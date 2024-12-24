@@ -1,4 +1,4 @@
-.card-bordered {
+ .card-bordered {
     border: 1px solid #ebebeb
 }
 
@@ -94,7 +94,7 @@ h4.card-title {
 .media-chat {
     padding-right: 64px;
     margin-bottom: 0;
-    /* background-color:rgb(72, 28, 232) */
+   
 }
 
 .media {
@@ -124,7 +124,7 @@ h4.card-title {
     -webkit-box-flex: initial;
     flex: initial;
     display: table;
-    /* background-color: rgb(36, 187, 237); */
+    
 }
 
 .media-body {
@@ -146,7 +146,6 @@ h4.card-title {
 }
 
 .media-chat .media-body p.meta {
-    /* background-color: transparent !important; */
     background-color: #31c7de;
     padding: 0;
     opacity: .8
@@ -296,4 +295,70 @@ textarea {
 
 .text-info {
     color: #48b0f7 !important
+} 
+
+
+
+/* General styles for media-chat */
+.media-chat {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
 }
+
+.media-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.response-value {
+    color: #4CAF50;  /* Change color to green for better readability */
+    font-weight: bold;
+}
+
+.user-chat {
+    background-color: #f1f1f1;  /* Light background for user question */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.media-chat-reverse .media-body {
+    background-color: #007bff;  /* Blue background for the bot's response */
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* Adding some spacing and styling for stronger visual distinction */
+.media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.media-chat-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Styling question text */
+.user-question {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Optional: Add a box shadow to make it stand out */
+.media-body {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects for response values */
+.response-value:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+

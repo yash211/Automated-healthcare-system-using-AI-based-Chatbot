@@ -10,8 +10,9 @@ app = Flask(__name__)
  
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = 'Yash@2112'
 app.config['MYSQL_DB'] = 'medixa'
+app.config['MYSQL_PORT'] = 3305
  
 mysql = MySQL(app)
 app.config["SESSION_PERMANENT"] = False
