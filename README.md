@@ -123,10 +123,12 @@ graph TB
   - Trained a **Multinomial Naïve Bayes** model achieving 95% accuracy.
   - Offers remedies for questions like "How can I cure cuts?".
 
-## Screenshot and Video
-![Home Page](https://img.shields.io/badge/Frontend-HTML%2FCSS-green?logo=html5&logoColor=white)
-![HTML/CSS](https://img.shields.io/badge/Frontend-HTML%2FCSS-green?logo=html5&logoColor=white)
-![HTML/CSS](https://img.shields.io/badge/Frontend-HTML%2FCSS-green?logo=html5&logoColor=white)
+## Demo
+<p align="center">
+  <a href="https://drive.google.com/file/d/1jCLZFyKBG2DQGrodIIA3F7G2PDUyIwLe/preview">
+    <img src="https://drive.google.com/uc?export=view&id=1XyfJtX6W6ZZ7_O-tPjgS_8kyFR14TdPs" alt="Watch the video"/>
+  </a>
+</p>
 
 ## Tech Stack
 
